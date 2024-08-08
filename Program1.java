@@ -1,5 +1,5 @@
 import java.util.Scanner;
-Class Document	{
+abstract class Document	{
 	
 	public static int add(int n, int m){
 	return n+m;
@@ -14,4 +14,8 @@ Class Document	{
 	add(n,m);
 	}
 
+	abstract void m1();
+	void m2(){
+		System.out.println("why ankit is admin");
+	}
 }
