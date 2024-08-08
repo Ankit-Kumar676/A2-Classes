@@ -1,0 +1,59 @@
+import java.util.Scanner;
+class Nth_arm{
+public statc int count(int n){
+int c = 0;
+while(n!=0){
+c++;
+n=n/10;
+}
+return c;
+}
+public static int power(int n,int m){
+int p=1;
+for(int i=1;i<=m;i++){
+p=p*n;
+}
+return p;
+}
+public static int arm(int n){
+int s = 0;
+int n1=n;
+int count=count(n);
+while(n!=0){
+int r = n%10;
+s=s+power(r,count);
+n=n/10;
+}
+if(s==n1){
+return 1;
+}
+else
+{
+return 0;
+}
+public static void main(String[]args){
+Scanner sc = new Scanner(System.in);
+System.out.println("Enter m");
+int m = sc.nextInt();
+System.out.println("Enter n");
+int n = sc.nextInt();
+System.out.println("Enter nth number");
+int p =sc.nextInt();
+int c =0;
+boolean flag =false;
+for(int i=m;i<=n;i++){
+int z = arm(i);
+if(z==1){
+c++;
+}
+if(p==c){
+System.out.println(i);
+flag=true;
+break;
+}
+}
+if(flag==false){
+System.out.println("your nth number is not available in the range");
+}
+}
+}
